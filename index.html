@@ -3,114 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kyoshii_khay11 - Music Creator & Sound Designer</title>
-    <!-- Menggunakan font Google 'Nunito' untuk kesan bulat dan modern -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome untuk ikon sosial media dan tombol play -->
+    <title>Kyoshii Khay11 - Sound Designer</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Load Google Font (Quicksand) -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            /* Background gradient cerah yang lembut */
+            background: linear-gradient(135deg, #fff1f2 0%, #fdf4ff 50%, #f3e8ff 100%);
+            color: #4c1d95;
+        }
+        
+        /* Animasi piringan hitam */
+        .spin {
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Styling scrollbar elegan */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbcfe8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f472b6;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex justify-center pb-20 selection:bg-pink-200 selection:text-pink-900">
 
-    <!-- Header / Navigasi -->
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-sparkles"></i> kyoshii_khay11
-        </div>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Music</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <p class="greeting">Hi! <i class="fa-solid fa-sparkles"></i></p>
-            <h1>kyoshii_khay11</h1>
-            <h2>Music Creator & Sound Designer</h2>
-            <p class="description">Creating music that inspires,<br>entertains, and connects.</p>
-            <a href="#" class="btn-primary"><i class="fa-solid fa-play"></i> Listen My Music</a>
-        </div>
-        <div class="hero-image">
-            <!-- Ganti src dengan file gambar karakter buatanmu -->
-            <img src="mascot-hero.png" alt="Kyoshii Mascot">
-        </div>
-    </section>
-
-    <!-- Featured Music Section -->
-    <section class="featured-music">
-        <h2 class="section-title"><i class="fa-solid fa-sparkles"></i> Featured Music</h2>
-        <div class="music-grid">
+    <div class="w-full max-w-md px-6 pt-12">
+        
+        <!-- Header / Profile Section -->
+        <div class="flex flex-col items-center text-center mb-10">
+            <div class="relative w-32 h-32 mb-5">
+                <div class="absolute inset-0 bg-gradient-to-tr from-pink-300 to-rose-200 rounded-full blur-lg opacity-80 animate-pulse"></div>
+                <img src="https://placehold.co/400x400/fdf2f8/db2777?text=Kyoshii" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
+            </div>
             
-            <!-- Card 1 -->
-            <div class="music-card">
-                <div class="card-img-container bg-purple">
-                    <img src="cover-dreamy.png" alt="Dreamy Days">
-                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+            <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-400 mb-1">
+                Kyoshii Khay11
+            </h1>
+            <p class="text-rose-900/60 font-medium tracking-wide mb-6">Music Creator & Sound Designer ✨</p>
+            
+            <!-- Social Links -->
+            <div class="flex gap-4">
+                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-pink-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
+                    <i class="fa-brands fa-spotify text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-rose-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-purple-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-fuchsia-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <div class="flex items-center justify-between mb-5 px-1">
+                <h2 class="text-xl font-bold text-rose-950">My Tracks</h2>
+                <span class="text-xs text-pink-600 font-bold px-3 py-1.5 bg-pink-100 rounded-full shadow-sm">6 Songs</span>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                
+                <!-- Track 1 -->
+                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-1', 'btn-1', 'img-1')">
+                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+                        <img id="img-1" src="https://placehold.co/150x150/fbcfe8/be123c?text=D" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
+                    </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Dreamy Days</h3>
+                        <p class="text-rose-900/50 font-medium text-xs truncate">Lofi / Chill</p>
+                    </div>
+                    <button id="btn-1" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <!-- File MP3 (Pastikan file lagu1.mp3 ada di folder yang sama) -->
+                    <audio id="audio-1" src="lagu1.mp3"></audio>
                 </div>
-                <h3>Dreamy Days</h3>
-                <p>Lofi / Chill</p>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="music-card">
-                <div class="card-img-container bg-pink">
-                    <img src="cover-levelup.png" alt="Level Up!">
-                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                <!-- Track 2 -->
+                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-2', 'btn-2', 'img-2')">
+                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+                        <img id="img-2" src="https://placehold.co/150x150/fce7f3/be123c?text=S" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
+                    </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Sweet Melody</h3>
+                        <p class="text-rose-900/50 font-medium text-xs truncate">Pop / Acoustic</p>
+                    </div>
+                    <button id="btn-2" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <audio id="audio-2" src="lagu2.mp3"></audio>
                 </div>
-                <h3>Level Up!</h3>
-                <p>Game / 8bit</p>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="music-card">
-                <div class="card-img-container bg-blue">
-                    <img src="cover-blue.png" alt="Blue Sunday">
-                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                <!-- Track 3 -->
+                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-3', 'btn-3', 'img-3')">
+                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+                        <img id="img-3" src="https://placehold.co/150x150/fecdd3/be123c?text=P" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
+                    </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Pink Sunset</h3>
+                        <p class="text-rose-900/50 font-medium text-xs truncate">Synthwave</p>
+                    </div>
+                    <button id="btn-3" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <audio id="audio-3" src="lagu3.mp3"></audio>
                 </div>
-                <h3>Blue Sunday</h3>
-                <p>Pop / Acoustic</p>
-            </div>
 
-        </div>
-    </section>
+                <!-- Track 4 -->
+                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-4', 'btn-4', 'img-4')">
+                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+                        <img id="img-4" src="https://placehold.co/150x150/e9d5ff/7e22ce?text=M" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
+                    </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-purple-600 transition">Midnight Whisper</h3>
+                        <p class="text-rose-900/50 font-medium text-xs truncate">R&B / Soul</p>
+                    </div>
+                    <button id="btn-4" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <audio id="audio-4" src="lagu4.mp3"></audio>
+                </div>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="about-card">
-            <div class="about-image">
-                <!-- Ganti src dengan file gambar karakter buatanmu yang sedang memegang laptop -->
-                <img src="mascot-about.png" alt="About Kyoshii">
-            </div>
-            <div class="about-content">
-                <h2>About Me <i class="fa-solid fa-sparkles"></i></h2>
-                <p>I'm kyoshii_khay11, a music creator who loves turning ideas and feelings into melodies.</p>
-                <p>My works are inspired by everyday moments, games, stories, and dreams.</p>
-                <a href="#" class="btn-outline">Learn More About Me <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
+                <!-- Track 5 -->
+                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-5', 'btn-5', 'img-5')">
+                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+                        <img id="img-5" src="https://placehold.co/150x150/fae8ff/a21caf?text=S" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
+                    </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Starlight Dance</h3>
+                        <p class="text-rose-900/50 font-medium text-xs truncate">Pop / Upbeat</p>
+                    </div>
+                    <button id="btn-5" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <audio id="audio-5" src="lagu5.mp3"></audio>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-left">
-            <div class="logo">
-                <i class="fa-solid fa-sparkles"></i> kyoshii_khay11
-            </div>
-            <p>Make something you love.<br>Share something that stays.</p>
-        </div>
-        <div class="footer-right">
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-soundcloud"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-regular fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
+                <!-- Track 6 -->
+                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-6', 'btn-6', 'img-6')">
+                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+                        <img id="img-6" src="https://placehold.co/150x150/ffedd5/c2410c?text=C" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
+                    </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-orange-500 transition">Cafe Latte</h3>
+                        <p class="text-rose-900/50 font-medium text-xs truncate">Jazz / Bossa</p>
+                    </div>
+                    <button id="btn-6" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <audio id="audio-6" src="lagu6.mp3"></audio>
+                </div>
 
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="bg-white/50 rounded-3xl p-7 border border-white mb-8 backdrop-blur-md shadow-sm shadow-pink-100 relative overflow-hidden">
+            <div class="absolute -right-6 -top-6 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
+            
+            <h2 class="text-xl font-bold text-rose-950 mb-3 relative z-10">About Me 🌸</h2>
+            <p class="text-rose-900/70 font-medium text-sm leading-relaxed relative z-10">
+                Hi! I'm a passionate music creator who loves turning beautiful moments into enchanting melodies. From sweet acoustic tunes to dreamy lofi beats, I craft sounds that touch the heart.
+            </p>
+            <a href="mailto:hello@example.com" class="mt-5 inline-block w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-pink-400 to-rose-400 text-white font-bold text-sm hover:shadow-lg hover:shadow-pink-300/50 hover:-translate-y-0.5 transition-all duration-300 relative z-10">
+                Let's Collaborate <i class="fa-solid fa-heart ml-1"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-rose-900/40 text-xs font-semibold pb-6">
+            Made with <i class="fa-solid fa-heart text-pink-300 mx-1"></i> by Kyoshii
+        </div>
+
+    </div>
+
+    <script>
+        let currentAudio = null;
+        let currentBtn = null;
+        let currentImg = null;
+
+        function togglePlay(audioId, btnId, imgId) {
+            const audio = document.getElementById(audioId);
+            const btn = document.getElementById(btnId);
+            const img = document.getElementById(imgId);
+
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; 
+                currentBtn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
+                currentBtn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all';
+                currentImg.classList.remove('spin');
+            }
+
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i>'; 
+                btn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 text-white flex items-center justify-center shadow-md shadow-pink-300/50 transition-all scale-105';
+                img.classList.add('spin');
+
+                currentAudio = audio;
+                currentBtn = btn;
+                currentImg = img;
+            } else {
+                audio.pause();
+                btn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
+                btn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all';
+                img.classList.remove('spin');
+                
+                currentAudio = null;
+                currentBtn = null;
+                currentImg = null;
+            }
+
+            audio.onended = function() {
+                btn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
+                btn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all';
+                img.classList.remove('spin');
+                currentAudio = null;
+                currentBtn = null;
+                currentImg = null;
+            };
+        }
+    </script>
 </body>
 </html>
