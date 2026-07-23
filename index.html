@@ -1,142 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kyoshii_khay11</title>
-
+    <title>kyoshii_khay11 - Music Creator & Sound Designer</title>
+    <!-- Menggunakan font Google 'Nunito' untuk kesan bulat dan modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk ikon sosial media dan tombol play -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+    <!-- Header / Navigasi -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-sparkles"></i> kyoshii_khay11
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Music</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-    <div class="logo">
-        kyoshii_khay11
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="greeting">Hi! <i class="fa-solid fa-sparkles"></i></p>
+            <h1>kyoshii_khay11</h1>
+            <h2>Music Creator & Sound Designer</h2>
+            <p class="description">Creating music that inspires,<br>entertains, and connects.</p>
+            <a href="#" class="btn-primary"><i class="fa-solid fa-play"></i> Listen My Music</a>
+        </div>
+        <div class="hero-image">
+            <!-- Ganti src dengan file gambar karakter buatanmu -->
+            <img src="mascot-hero.png" alt="Kyoshii Mascot">
+        </div>
+    </section>
 
-    <nav>
+    <!-- Featured Music Section -->
+    <section class="featured-music">
+        <h2 class="section-title"><i class="fa-solid fa-sparkles"></i> Featured Music</h2>
+        <div class="music-grid">
+            
+            <!-- Card 1 -->
+            <div class="music-card">
+                <div class="card-img-container bg-purple">
+                    <img src="cover-dreamy.png" alt="Dreamy Days">
+                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <h3>Dreamy Days</h3>
+                <p>Lofi / Chill</p>
+            </div>
 
-        <a href="#">Home</a>
+            <!-- Card 2 -->
+            <div class="music-card">
+                <div class="card-img-container bg-pink">
+                    <img src="cover-levelup.png" alt="Level Up!">
+                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <h3>Level Up!</h3>
+                <p>Game / 8bit</p>
+            </div>
 
-        <a href="#music">Music</a>
-
-        <a href="#about">About</a>
-
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-</header>
-
-
-<section class="hero">
-
-    <div class="hero-text">
-
-        <p class="hello">
-            Hello!
-        </p>
-
-        <h1>
-            kyoshii_khay11
-        </h1>
-
-        <p class="subtitle">
-
-            Personal Artist
-
-        </p>
-
-        <button>
-
-            Listen My Music
-
-        </button>
-
-    </div>
-
-    <div class="hero-image">
-
-        <!-- mascot nanti -->
-
-    </div>
-
-</section>
-
-
-<section id="music" class="music">
-
-    <h2>
-        Featured Music
-    </h2>
-
-    <div class="music-grid">
-
-        <div class="card">
-
-            <div class="cover"></div>
-
-            <h3>Music One</h3>
-
-            <p>Original Music</p>
+            <!-- Card 3 -->
+            <div class="music-card">
+                <div class="card-img-container bg-blue">
+                    <img src="cover-blue.png" alt="Blue Sunday">
+                    <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <h3>Blue Sunday</h3>
+                <p>Pop / Acoustic</p>
+            </div>
 
         </div>
+    </section>
 
-        <div class="card">
-
-            <div class="cover"></div>
-
-            <h3>Music Two</h3>
-
-            <p>Original Music</p>
-
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-card">
+            <div class="about-image">
+                <!-- Ganti src dengan file gambar karakter buatanmu yang sedang memegang laptop -->
+                <img src="mascot-about.png" alt="About Kyoshii">
+            </div>
+            <div class="about-content">
+                <h2>About Me <i class="fa-solid fa-sparkles"></i></h2>
+                <p>I'm kyoshii_khay11, a music creator who loves turning ideas and feelings into melodies.</p>
+                <p>My works are inspired by everyday moments, games, stories, and dreams.</p>
+                <a href="#" class="btn-outline">Learn More About Me <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-
-            <div class="cover"></div>
-
-            <h3>Music Three</h3>
-
-            <p>Original Music</p>
-
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <div class="logo">
+                <i class="fa-solid fa-sparkles"></i> kyoshii_khay11
+            </div>
+            <p>Make something you love.<br>Share something that stays.</p>
         </div>
-
-    </div>
-
-</section>
-
-
-<section id="about" class="about">
-
-    <h2>About</h2>
-
-    <p>
-
-        Hi! I'm kyoshii_khay11.
-
-        I create original music inspired by imagination,
-        games and creativity.
-
-    </p>
-
-</section>
-
-
-<footer id="contact">
-
-    <a href="#">YouTube</a>
-
-    <a href="#">SoundCloud</a>
-
-    <a href="#">Spotify</a>
-
-    <a href="#">Gumroad</a>
-
-</footer>
-
-<script src="script.js"></script>
+        <div class="footer-right">
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
