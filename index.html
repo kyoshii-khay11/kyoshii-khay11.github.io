@@ -3,252 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyoshii Khay11 - Sound Designer</title>
+    <title>kyoshii_khay11 | Music Creator</title>
     
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Quicksand untuk kesan feminin, bulat, dan rapi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Load FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Load Google Font (Quicksand) -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <!-- FontAwesome CDN untuk memunculkan semua ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            /* Background gradient cerah yang lembut */
-            background: linear-gradient(135deg, #fff1f2 0%, #fdf4ff 50%, #f3e8ff 100%);
-            color: #4c1d95;
-        }
-        
-        /* Animasi piringan hitam */
-        .spin {
-            animation: spin 3s linear infinite;
-        }
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
+        :root {
+            --primary: #d46a84;
+            --primary-hover: #b8526c;
+            --bg-gradient: linear-gradient(135deg, #fff0f5 0%, #fce4ec 50%, #f3e5f5 100%);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --text-main: #4a3b4c;
+            --text-muted: #8c7890;
+            --shadow: 0 10px 30px rgba(212, 106, 132, 0.12);
         }
 
-        /* Styling scrollbar elegan */
-        ::-webkit-scrollbar {
-            width: 6px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
         }
-        ::-webkit-scrollbar-track {
-            background: transparent;
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #fbcfe8;
-            border-radius: 10px;
+
+        .phone-container {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 36px;
+            padding: 35px 24px;
+            box-shadow: var(--shadow);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f472b6;
+
+        /* Profile Header */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 16px auto;
+            border-radius: 50%;
+            background: #ffeff3;
+            border: 3px solid #ffffff;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .profile-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .profile-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Playlist Section (6 Tracks) */
+        .playlist-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .track-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .music-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .music-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 106, 132, 0.15);
+        }
+
+        .card-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .track-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .track-details h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .track-details p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .card-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .play-btn {
+            width: 38px;
+            height: 38px;
+            background: #ffeff3;
+            color: var(--primary);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            padding-left: 2px;
+        }
+
+        .play-btn:hover, .play-btn.playing {
+            background: var(--primary);
+            color: #ffffff;
+            transform: scale(1.08);
+        }
+
+        /* Tombol Gumroad di tiap track */
+        .gumroad-btn {
+            width: 38px;
+            height: 38px;
+            background: #f3e5f5;
+            color: #8e44ad;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .gumroad-btn:hover {
+            background: #8e44ad;
+            color: #ffffff;
+            transform: scale(1.08);
+        }
+
+        /* Footer / Social Links */
+        .footer {
+            text-align: center;
+            border-top: 1px solid rgba(212, 106, 132, 0.15);
+            padding-top: 20px;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
         }
     </style>
 </head>
-<body class="min-h-screen flex justify-center pb-20 selection:bg-pink-200 selection:text-pink-900">
+<body>
 
-    <div class="w-full max-w-md px-6 pt-12">
+    <div class="phone-container">
         
-        <!-- Header / Profile Section -->
-        <div class="flex flex-col items-center text-center mb-10">
-            <div class="relative w-32 h-32 mb-5">
-                <div class="absolute inset-0 bg-gradient-to-tr from-pink-300 to-rose-200 rounded-full blur-lg opacity-80 animate-pulse"></div>
-                <img src="https://placehold.co/400x400/fdf2f8/db2777?text=Kyoshii" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="avatar-wrapper">
+                <i class="fa-solid fa-music"></i>
             </div>
-            
-            <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-400 mb-1">
-                Kyoshii Khay11
-            </h1>
-            <p class="text-rose-900/60 font-medium tracking-wide mb-6">Music Creator & Sound Designer ✨</p>
-            
-            <!-- Social Links -->
-            <div class="flex gap-4">
-                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-pink-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
-                    <i class="fa-brands fa-cart-shopping text-lg"></i>
-                </a>
-                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-rose-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
-                    <i class="fa-brands fa-soundcloud text-lg"></i>
-                </a>
-                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-purple-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                </a>
-                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-fuchsia-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
-                    <i class="fa-solid fa-spotify text-lg"></i>
-                </a>
-                <a href="#" class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-pink-400 hover:text-white hover:bg-rose-500 transition-all duration-300 shadow-md shadow-pink-100 hover:-translate-y-1">
-                    <i class="fa-brands fa-youtube text-lg"></i>
-                </a>
-            </div>
+            <h1>kyoshii_khay11</h1>
+            <p>Music Creator & Sound Designer</p>
         </div>
 
-        <div class="mb-10">
-            <div class="flex items-center justify-between mb-5 px-1">
-                <h2 class="text-xl font-bold text-rose-950">My Tracks</h2>
-                <span class="text-xs text-pink-600 font-bold px-3 py-1.5 bg-pink-100 rounded-full shadow-sm">6 Songs</span>
-            </div>
-
-            <div class="flex flex-col gap-4">
-                
-                <!-- Track 1 -->
-                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-1', 'btn-1', 'img-1')">
-                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                        <img id="img-1" src="https://placehold.co/150x150/fbcfe8/be123c?text=D" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
-                    </div>
-                    <div class="flex-grow overflow-hidden">
-                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Dreamy Days</h3>
-                        <p class="text-rose-900/50 font-medium text-xs truncate">Lofi / Chill</p>
-                    </div>
-                    <button id="btn-1" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
-                        <i class="fa-solid fa-play ml-1"></i>
-                    </button>
-                    <!-- File MP3 (Pastikan file lagu1.mp3 ada di folder yang sama) -->
-                    <audio id="audio-1" src="lagu1.mp3"></audio>
-                </div>
-
-                <!-- Track 2 -->
-                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-2', 'btn-2', 'img-2')">
-                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                        <img id="img-2" src="https://placehold.co/150x150/fce7f3/be123c?text=S" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
-                    </div>
-                    <div class="flex-grow overflow-hidden">
-                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Sweet Melody</h3>
-                        <p class="text-rose-900/50 font-medium text-xs truncate">Pop / Acoustic</p>
-                    </div>
-                    <button id="btn-2" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
-                        <i class="fa-solid fa-play ml-1"></i>
-                    </button>
-                    <audio id="audio-2" src="lagu2.mp3"></audio>
-                </div>
-
-                <!-- Track 3 -->
-                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-3', 'btn-3', 'img-3')">
-                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                        <img id="img-3" src="https://placehold.co/150x150/fecdd3/be123c?text=P" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
-                    </div>
-                    <div class="flex-grow overflow-hidden">
-                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Pink Sunset</h3>
-                        <p class="text-rose-900/50 font-medium text-xs truncate">Synthwave</p>
-                    </div>
-                    <button id="btn-3" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
-                        <i class="fa-solid fa-play ml-1"></i>
-                    </button>
-                    <audio id="audio-3" src="lagu3.mp3"></audio>
-                </div>
-
-                <!-- Track 4 -->
-                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-4', 'btn-4', 'img-4')">
-                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                        <img id="img-4" src="https://placehold.co/150x150/e9d5ff/7e22ce?text=M" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
-                    </div>
-                    <div class="flex-grow overflow-hidden">
-                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-purple-600 transition">Midnight Whisper</h3>
-                        <p class="text-rose-900/50 font-medium text-xs truncate">R&B / Soul</p>
-                    </div>
-                    <button id="btn-4" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
-                        <i class="fa-solid fa-play ml-1"></i>
-                    </button>
-                    <audio id="audio-4" src="lagu4.mp3"></audio>
-                </div>
-
-                <!-- Track 5 -->
-                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-5', 'btn-5', 'img-5')">
-                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                        <img id="img-5" src="https://placehold.co/150x150/fae8ff/a21caf?text=S" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
-                    </div>
-                    <div class="flex-grow overflow-hidden">
-                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-pink-600 transition">Starlight Dance</h3>
-                        <p class="text-rose-900/50 font-medium text-xs truncate">Pop / Upbeat</p>
-                    </div>
-                    <button id="btn-5" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
-                        <i class="fa-solid fa-play ml-1"></i>
-                    </button>
-                    <audio id="audio-5" src="lagu5.mp3"></audio>
-                </div>
-
-                <!-- Track 6 -->
-                <div class="flex items-center p-3.5 bg-white/60 hover:bg-white/90 border border-white rounded-2xl transition duration-300 backdrop-blur-md shadow-sm shadow-pink-100 cursor-pointer group" onclick="togglePlay('audio-6', 'btn-6', 'img-6')">
-                    <div class="relative w-14 h-14 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                        <img id="img-6" src="https://placehold.co/150x150/ffedd5/c2410c?text=C" alt="Cover" class="w-full h-full object-cover rounded-full border-2 border-white">
-                    </div>
-                    <div class="flex-grow overflow-hidden">
-                        <h3 class="text-rose-950 font-bold text-sm truncate group-hover:text-orange-500 transition">Cafe Latte</h3>
-                        <p class="text-rose-900/50 font-medium text-xs truncate">Jazz / Bossa</p>
-                    </div>
-                    <button id="btn-6" class="w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all">
-                        <i class="fa-solid fa-play ml-1"></i>
-                    </button>
-                    <audio id="audio-6" src="lagu6.mp3"></audio>
-                </div>
-
-            </div>
+        <!-- Playlist (6 Tracks) -->
+        <div class="playlist-title">
+            <i class="fa-solid fa-compact-disc"></i> Featured Tracks
         </div>
 
-        <!-- About Section -->
-        <div class="bg-white/50 rounded-3xl p-7 border border-white mb-8 backdrop-blur-md shadow-sm shadow-pink-100 relative overflow-hidden">
-            <div class="absolute -right-6 -top-6 w-24 h-24 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
+        <div class="track-list">
             
-            <h2 class="text-xl font-bold text-rose-950 mb-3 relative z-10">About Me 🌸</h2>
-            <p class="text-rose-900/70 font-medium text-sm leading-relaxed relative z-10">
-                Hi! I'm a passionate music creator who loves turning beautiful moments into enchanting melodies. From sweet acoustic tunes to dreamy lofi beats, I craft sounds that touch the heart.
-            </p>
-            <a href="mailto:hello@example.com" class="mt-5 inline-block w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-pink-400 to-rose-400 text-white font-bold text-sm hover:shadow-lg hover:shadow-pink-300/50 hover:-translate-y-0.5 transition-all duration-300 relative z-10">
-                Let's Collaborate <i class="fa-solid fa-heart ml-1"></i>
-            </a>
+            <!-- Track 1 -->
+            <div class="music-card">
+                <div class="card-info">
+                    <span class="track-number">01</span>
+                    <div class="track-details">
+                        <h3>Dreamy Days</h3>
+                        <p>Lofi / Chill</p>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="play-btn" onclick="togglePlay('audio-1', this)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <a href="https://gumroad.com" target="_blank" class="gumroad-btn" title="Beli di Gumroad">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <audio id="audio-1" src="lagu1.mp3"></audio>
+            </div>
+
+            <!-- Track 2 -->
+            <div class="music-card">
+                <div class="card-info">
+                    <span class="track-number">02</span>
+                    <div class="track-details">
+                        <h3>Level Up!</h3>
+                        <p>Game / 8bit</p>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="play-btn" onclick="togglePlay('audio-2', this)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <a href="https://gumroad.com" target="_blank" class="gumroad-btn" title="Beli di Gumroad">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <audio id="audio-2" src="lagu2.mp3"></audio>
+            </div>
+
+            <!-- Track 3 -->
+            <div class="music-card">
+                <div class="card-info">
+                    <span class="track-number">03</span>
+                    <div class="track-details">
+                        <h3>Blue Sunday</h3>
+                        <p>Pop / Acoustic</p>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="play-btn" onclick="togglePlay('audio-3', this)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <a href="https://gumroad.com" target="_blank" class="gumroad-btn" title="Beli di Gumroad">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <audio id="audio-3" src="lagu3.mp3"></audio>
+            </div>
+
+            <!-- Track 4 -->
+            <div class="music-card">
+                <div class="card-info">
+                    <span class="track-number">04</span>
+                    <div class="track-details">
+                        <h3>Starlight Lullaby</h3>
+                        <p>Ambient / Sleep</p>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="play-btn" onclick="togglePlay('audio-4', this)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <a href="https://gumroad.com" target="_blank" class="gumroad-btn" title="Beli di Gumroad">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <audio id="audio-4" src="lagu4.mp3"></audio>
+            </div>
+
+            <!-- Track 5 -->
+            <div class="music-card">
+                <div class="card-info">
+                    <span class="track-number">05</span>
+                    <div class="track-details">
+                        <h3>Coffee & Rain</h3>
+                        <p>Jazzhop / Cozy</p>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="play-btn" onclick="togglePlay('audio-5', this)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <a href="https://gumroad.com" target="_blank" class="gumroad-btn" title="Beli di Gumroad">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <audio id="audio-5" src="lagu5.mp3"></audio>
+            </div>
+
+            <!-- Track 6 -->
+            <div class="music-card">
+                <div class="card-info">
+                    <span class="track-number">06</span>
+                    <div class="track-details">
+                        <h3>Electric Memories</h3>
+                        <p>Synthwave / Retro</p>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="play-btn" onclick="togglePlay('audio-6', this)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <a href="https://gumroad.com" target="_blank" class="gumroad-btn" title="Beli di Gumroad">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <audio id="audio-6" src="lagu6.mp3"></audio>
+            </div>
+
         </div>
 
-        <!-- Footer -->
-        <div class="text-center text-rose-900/40 text-xs font-semibold pb-6">
-            Made with <i class="fa-solid fa-heart text-pink-300 mx-1"></i> by Kyoshii
+        <!-- Footer & Socials (Email diganti SoundCloud) -->
+        <div class="footer">
+            <p>Make something you love.</p>
+            <div class="social-icons">
+                <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://soundcloud.com" target="_blank" title="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://gumroad.com" target="_blank" title="Gumroad Store"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
         </div>
 
     </div>
 
+    <!-- JavaScript untuk Sistem Pemutar Musik -->
     <script>
         let currentAudio = null;
         let currentBtn = null;
-        let currentImg = null;
 
-        function togglePlay(audioId, btnId, imgId) {
+        function togglePlay(audioId, btnElement) {
             const audio = document.getElementById(audioId);
-            const btn = document.getElementById(btnId);
-            const img = document.getElementById(imgId);
 
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
-                currentAudio.currentTime = 0; 
-                currentBtn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
-                currentBtn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all';
-                currentImg.classList.remove('spin');
+                currentAudio.currentTime = 0;
+                if (currentBtn) {
+                    currentBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                    currentBtn.classList.remove('playing');
+                }
             }
 
             if (audio.paused) {
                 audio.play();
-                btn.innerHTML = '<i class="fa-solid fa-pause"></i>'; 
-                btn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 text-white flex items-center justify-center shadow-md shadow-pink-300/50 transition-all scale-105';
-                img.classList.add('spin');
-
+                btnElement.innerHTML = '<i class="fa-solid fa-pause"></i>';
+                btnElement.classList.add('playing');
                 currentAudio = audio;
-                currentBtn = btn;
-                currentImg = img;
+                currentBtn = btnElement;
             } else {
                 audio.pause();
-                btn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
-                btn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all';
-                img.classList.remove('spin');
-                
+                btnElement.innerHTML = '<i class="fa-solid fa-play"></i>';
+                btnElement.classList.remove('playing');
                 currentAudio = null;
                 currentBtn = null;
-                currentImg = null;
             }
 
             audio.onended = function() {
-                btn.innerHTML = '<i class="fa-solid fa-play ml-1"></i>';
-                btn.className = 'w-10 h-10 flex-shrink-0 rounded-full bg-white text-pink-400 flex items-center justify-center shadow-sm transition-all';
-                img.classList.remove('spin');
+                btnElement.innerHTML = '<i class="fa-solid fa-play"></i>';
+                btnElement.classList.remove('playing');
                 currentAudio = null;
                 currentBtn = null;
-                currentImg = null;
             };
         }
     </script>
